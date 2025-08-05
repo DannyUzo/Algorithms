@@ -10,7 +10,7 @@ This repository contains implementations of various data structures and algorith
 - Binary Search Tree
 - Linked Lists
 - Tries
-- Essential methods such as `peek`, `pop`,`push`, `size`, `reduce`, etc.
+- Essential methods such as `peek`, `pop`,`push`, `size`, `reduce`, `repeat`, `unshift`, `shift`.
 
 ## Implemented Algorithms
 

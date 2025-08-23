@@ -23,3 +23,5 @@ Utilizing the knowledge gained from the tutorial, I derived different approaches
 Additionally, I wrote simple algorithms to find the mean and median of an array of numbers. These algorithms are implemented in their respective files.
 
 Feel free to explore the implementations and provide feedback or suggestions for improvement.
+
+### Liskov Substitution Principle

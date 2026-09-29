@@ -32,6 +32,16 @@ fibonacci(0); // 0
 fibonacci(6); // 8
 ```
 
+### Merge Sorted Arrays
+
+The `merge_sorted_arrays.js` file contains an implementation for merging two sorted arrays into a single sorted array. It validates that both inputs are arrays, efficiently combines them using a two-pointer approach, and runs in **O(n + m)** time with **O(n + m)** space.
+
+```js
+const mergeSortedArrays = require('./merge_sorted_arrays');
+
+mergeSortedArrays([1, 3, 5], [2, 4, 6]); // [1, 2, 3, 4, 5, 6]
+```
+
 Feel free to explore the implementations and provide feedback or suggestions for improvement.
 
 ### Liskov Substitution Principle

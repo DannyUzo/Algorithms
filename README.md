@@ -42,6 +42,21 @@ const mergeSortedArrays = require('./merge_sorted_arrays');
 mergeSortedArrays([1, 3, 5], [2, 4, 6]); // [1, 2, 3, 4, 5, 6]
 ```
 
+### Insertion Sort
+
+The `insertion_sort.js` file sorts a copy of an array of finite numbers in ascending order. It inserts each value into its correct position in the already-sorted prefix, so it is especially useful for small or nearly sorted inputs. It rejects non-arrays and arrays containing non-finite or non-number values, and leaves the original array unchanged.
+
+Average and worst-case time complexity are **O(n²)**; best-case time for an already sorted array is **O(n)**. Space complexity is **O(n)** because the implementation returns a sorted copy.
+
+```js
+const insertionSort = require('./insertion_sort');
+const assert = require('assert');
+
+assert.deepStrictEqual(insertionSort([5, 2, 4, 6, 1, 3]), [1, 2, 3, 4, 5, 6]);
+assert.deepStrictEqual(insertionSort([]), []);
+assert.deepStrictEqual(insertionSort([1, 2, 3]), [1, 2, 3]);
+```
+
 Feel free to explore the implementations and provide feedback or suggestions for improvement.
 
 ### Liskov Substitution Principle

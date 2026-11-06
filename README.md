@@ -57,6 +57,25 @@ assert.deepStrictEqual(insertionSort([]), []);
 assert.deepStrictEqual(insertionSort([1, 2, 3]), [1, 2, 3]);
 ```
 
+### Queue
+
+The `queue.js` file implements a first-in, first-out (FIFO) queue. It supports initializing from an array (which it copies), `enqueue`, `dequeue`, `peek`, `clear`, and `size` / `isEmpty` accessors. It accepts any values; attempting to dequeue or peek when empty throws a `RangeError`, and a non-array constructor argument throws a `TypeError`.
+
+Enqueue and dequeue are **O(1) amortized**. Dequeue can take **O(n)** on an occasional compaction, which avoids shifting the entire array on every removal. Space complexity is **O(n)** for the stored elements.
+
+```js
+const Queue = require('./queue');
+const assert = require('assert');
+
+const queue = new Queue(['Ada', 'Grace']);
+assert.strictEqual(queue.dequeue(), 'Ada');
+queue.enqueue('Linus');
+assert.strictEqual(queue.peek(), 'Grace');
+assert.strictEqual(queue.size, 2);
+```
+
+Run the queue tests with `node queue.test.js`.
+
 Feel free to explore the implementations and provide feedback or suggestions for improvement.
 
 ### Liskov Substitution Principle

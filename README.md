@@ -76,6 +76,22 @@ assert.strictEqual(queue.size, 2);
 
 Run the queue tests with `node queue.test.js`.
 
-Feel free to explore the implementations and provide feedback or suggestions for improvement.
+### Singly Linked List
+
+The `linked_list.js` file implements a singly linked list that preserves insertion order. It copies initial values into nodes, accepts values of any type, and validates that the optional constructor argument is an array. `append` and `prepend` add values, `contains` searches by strict equality, `remove` deletes the first matching value, and `toArray` returns the values in order. The `size` and `isEmpty` accessors report the current state; `clear` empties the list.
+
+Appending and prepending take **O(1)** time. Searching with `contains` or removing a value takes **O(n)** time, and `toArray` takes **O(n)** time. The list uses **O(n)** space for its nodes.
+
+```js
+const LinkedList = require('./linked_list');
+const assert = require('assert');
+
+const list = new LinkedList(['Ada', 'Grace']);
+list.append('Linus');
+assert.strictEqual(list.remove('Grace'), true);
+assert.deepStrictEqual(list.toArray(), ['Ada', 'Linus']);
+```
+
+Run the linked list tests with `node linked_list.test.js`.
 
 ### Liskov Substitution Principle

@@ -94,4 +94,19 @@ assert.deepStrictEqual(list.toArray(), ['Ada', 'Linus']);
 
 Run the linked list tests with `node linked_list.test.js`.
 
+### Breadth-First Search
+
+The `breadth_first_search.js` file traverses a directed graph from a starting node, visiting reachable nodes in layers by their distance from the start. It uses an adjacency-list object with string node labels and arrays of neighbors. The start node and every referenced neighbor must exist in the graph; malformed graphs and invalid labels are rejected. Breadth-first search is useful for exploring reachability and for finding shortest paths in unweighted graphs (path reconstruction requires recording predecessors).
+
+Time complexity is **O(V + E)** and extra space complexity is **O(V)**, where `V` is the number of nodes and `E` is the number of edges.
+
+```js
+const breadthFirstSearch = require('./breadth_first_search');
+
+breadthFirstSearch({ A: ['B', 'C'], B: ['D'], C: [], D: [] }, 'A');
+// ['A', 'B', 'C', 'D']
+```
+
+Run the tests with `node breadth_first_search.test.js`.
+
 ### Liskov Substitution Principle

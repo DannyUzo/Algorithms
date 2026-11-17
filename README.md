@@ -109,4 +109,19 @@ breadthFirstSearch({ A: ['B', 'C'], B: ['D'], C: [], D: [] }, 'A');
 
 Run the tests with `node breadth_first_search.test.js`.
 
+### Depth-First Search
+
+The `depth_first_search.js` file traverses a directed graph from a starting node, following each branch as far as possible before backtracking. It uses an adjacency-list object with string node labels and arrays of neighbors, and rejects malformed graphs, invalid labels, and start nodes that do not exist. Depth-first search is useful for reachability checks and exploring structure; it also forms the basis of cycle detection and topological sorting. Unlike breadth-first search, it does not find shortest paths in an unweighted graph.
+
+Time complexity is **O(V + E)** and extra space complexity is **O(V)**, where `V` is the number of nodes and `E` is the number of edges.
+
+```js
+const depthFirstSearch = require('./depth_first_search');
+
+depthFirstSearch({ A: ['B', 'C'], B: ['D'], C: [], D: [] }, 'A');
+// ['A', 'B', 'D', 'C']
+```
+
+Run the tests with `node depth_first_search.test.js`.
+
 ### Liskov Substitution Principle

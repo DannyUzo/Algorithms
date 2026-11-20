@@ -22,4 +22,13 @@ assert.strictEqual(JSON.stringify(graph), originalGraph);
 assert.deepStrictEqual(topologicalSort({ solo: [] }), ['solo']);
 assert.deepStrictEqual(topologicalSort({}), []);
 assert.deepStrictEqual(topologicalSort({ A: [], B: [] }), ['A', 'B']);
-assert.deepStrictEqual(topologicalSort({ A: ['B'], B: ['A'] }).length, 0);
+
+assert.throws(() => topologicalSort(null), TypeError);
+assert.throws(() => topologicalSort([]), TypeError);
+assert.throws(() => topologicalSort({ A: 'B' }), TypeError);
+assert.throws(() => topologicalSort({ A: [1] }), TypeError);
+assert.throws(() => topologicalSort({ A: ['missing'] }), TypeError);
+assert.throws(() => topologicalSort({ A: ['B'], B: ['A'] }), RangeError);
+assert.throws(() => topologicalSort({ A: ['A'] }), RangeError);
+
+console.log('Topological sort tests passed');

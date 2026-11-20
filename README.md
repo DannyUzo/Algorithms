@@ -124,4 +124,19 @@ depthFirstSearch({ A: ['B', 'C'], B: ['D'], C: [], D: [] }, 'A');
 
 Run the tests with `node depth_first_search.test.js`.
 
+### Topological Sort
+
+The `topological_sort.js` file orders the nodes of a directed acyclic graph (DAG) so that every node appears before its dependents. It uses Kahn's algorithm, which repeatedly selects nodes with no remaining incoming edges. This is useful for scheduling build steps, resolving dependencies, and ordering course prerequisites. The function validates the adjacency-list object, neighbor arrays, string labels, and that every referenced neighbor exists; it throws a `RangeError` when the graph contains a cycle.
+
+Time complexity is **O(V + E)** and space complexity is **O(V)**, where `V` is the number of nodes and `E` is the number of edges.
+
+```js
+const topologicalSort = require('./topological_sort');
+
+topologicalSort({ plan: ['build'], build: ['test'], test: [] });
+// ['plan', 'build', 'test']
+```
+
+Run the tests with `node topological_sort.test.js`.
+
 ### Liskov Substitution Principle

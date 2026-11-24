@@ -139,4 +139,19 @@ topologicalSort({ plan: ['build'], build: ['test'], test: [] });
 
 Run the tests with `node topological_sort.test.js`.
 
+### Dijkstra's Shortest-Path Algorithm
+
+The `dijkstra.js` file computes the shortest distance from a source node to every node in a directed weighted graph. Use it for routing and other shortest-path problems when every edge has a non-negative weight; it returns `Infinity` for unreachable nodes. The function validates the graph, source node, neighbor references, and finite non-negative numeric weights without changing the input graph.
+
+Time complexity is **O(V² + E)** and space complexity is **O(V)**, where `V` is the number of nodes and `E` is the number of edges.
+
+```js
+const dijkstra = require('./dijkstra');
+
+dijkstra({ A: { B: 4, C: 1 }, B: { D: 1 }, C: { B: 2, D: 5 }, D: {} }, 'A');
+// { A: 0, B: 3, C: 1, D: 4 }
+```
+
+Run the tests with `node dijkstra.test.js`.
+
 ### Liskov Substitution Principle
